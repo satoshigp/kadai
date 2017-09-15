@@ -29,24 +29,7 @@
 1. どのオブジェクトにスクリプトを持たせるか？
 1. 英語が読めないからエラーが怖くなった...  
 ---  
-## -**スクリプト**-
 
-移動やジャンプ
-```C
-//物理演算機能を使用する際はFixedUpdateのほうがいいらしい
-void FixedUpdate()
-   {
-     //キー入力
-       float x = Input.GetAxis("Horizontal");
-       float z = Input.GetAxis("Vertical");
-       float y = Input.GetAxis("Jump");
-       //物理演算機能を追加
-       Rigidbody rigidbody = GetComponent<Rigidbody>();
-　　　　//速度設定とか
-       rigidbody.AddForce(x * speed, y*Jump, z * speed);
-
-   }
-   ```  
 ## -**反省点**-  
 
        1. Playerの操作感の悪さ
