@@ -29,8 +29,29 @@
 1. どのオブジェクトにスクリプトを持たせるか？
 1. 英語が読めないからエラーが怖くなった...  
 ---  
+## スクリプト  
+```
+ void FixedUpdate()
+    {
+        if (transform.position.y < 0)
+        {
+            GameManager.NextScene = "GameOver";
+        }
+      
 
-## -**反省点**-  
+        //キー入力。
+
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        float y = Input.GetAxis("Jump");
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+
+        rigidbody.AddForce(x * speed, y*Jump, z * speed);
+        
+
+    }
+```
+## -**反省点**-  
 
        1. Playerの操作感の悪さ
        1. BGMがよくわからんことになった
